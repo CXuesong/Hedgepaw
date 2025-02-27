@@ -3,6 +3,10 @@ import * as Cave from "./cave";
 import * as Dragons from "./dragons";
 import * as Header from "./header";
 
+export type { CaveAnchorKey } from "./cave";
+export type { DragonsAnchorKey } from "./dragons";
+export type { HeaderAnchorKey } from "./header";
+
 export const wellKnownAnchorGroups = {
   Cave: Cave.caveAnchors,
   Header: Header.headerAnchors,

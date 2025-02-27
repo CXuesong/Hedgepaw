@@ -28,9 +28,9 @@ export const dragonsAnchors = {
     selector: "main > div > section:nth-of-type(1) h3:nth-of-type(1)",
     innerText: "Share",
   },
-  SctionBadge: {
+  SctionBadges: {
     selector: "main > div > section:nth-of-type(2) h3:nth-of-type(1)",
-    innerText: "Badge",
+    innerText: "Badges",
   },
   SctionStats: {
     selector: "main > div > section:nth-of-type(3) h3:nth-of-type(1)",

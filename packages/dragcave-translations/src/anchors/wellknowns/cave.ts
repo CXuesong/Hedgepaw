@@ -4,7 +4,7 @@ import { PageSectionAnchorGroup } from "../typings";
 export const caveAnchors = {
   // The Cave
   TheCave: {
-    selector: "main section:nth-of-type(1) > h2:nth-of-type(1)",
+    selector: "main section > h2:nth-of-type(1)",
     innerText: "The Cave",
   },
   TheCaveP1: {
@@ -49,12 +49,12 @@ export const caveAnchors = {
   },
   // Recent News
   RecentNews: {
-    selector: "main section:nth-of-type(2) h2:nth-of-type(1)",
+    selector: "main section h2:nth-of-type(1)",
     innerText: "Recent News",
   },
   // Connect
   Connect: {
-    selector: "main section:nth-of-type(3) h2:nth-of-type(3)",
+    selector: "main section h2:nth-of-type(1)",
     innerText: "Connect",
   },
 } satisfies PageSectionAnchorGroup;
