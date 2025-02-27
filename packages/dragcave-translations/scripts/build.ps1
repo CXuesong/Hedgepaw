@@ -2,16 +2,16 @@
 param (
     [Parameter()]
     [Switch]
-    $Clean
+    $Prod
 )
 
 if (-not $env:npm_execpath) {
     Write-Warning "This script is not intended to be executed directly. Please use `yarn build` instead."
 }
 
-if ($Clean) {
-    Remove-Item ./lib -Recurse -Force -ErrorAction SilentlyContinue
+if ($Prod) {
+    # Remove-Item ./lib -Recurse -Force -ErrorAction SilentlyContinue
 }
 
-tsc --project ./src/tsconfig.build.json
+vite build
 if ($LASTEXITCODE) { exit $LASTEXITCODE }
