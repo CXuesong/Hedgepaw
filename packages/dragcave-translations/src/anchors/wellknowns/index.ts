@@ -19,7 +19,7 @@ export type WellKnownAnchorKey<TGroupKey extends WellKnownAnchorGroupKey> = keyo
 export function getActiveAnchorGroupKeys(): WellKnownAnchorGroupKey[] {
   switch (location.pathname) {
     case "/": return ["Header", "Cave"];
-    case "/dragons": return ["Header", "Dragons"];
-    default: return ["Header"];
   }
+  if (location.pathname.match(/^\/dragons(\/|$)/g)) return ["Header", "Dragons"];
+  return ["Header"];
 }

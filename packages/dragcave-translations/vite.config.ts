@@ -8,7 +8,8 @@ import tsconfigPaths from "vite-tsconfig-paths";
 export default defineConfig(env => {
   const isProduction = env.mode?.toLowerCase() === "prod";
   const scriptVersion = (() => {
-    const v = new Date().toISOString().split("T")[0];
+    const now = new Date();
+    const v = now.toISOString().split("T")[0] + `.${now.getUTCHours()}.${now.getUTCMinutes()}`;
     if (isProduction) return v;
     return `${v}.dev.${Date.now()}`;
   })();

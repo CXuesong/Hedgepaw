@@ -14,7 +14,7 @@ export const resources: Record<DragonsAnchorKey, string> = {
   FilterByEggsHatchlings: "蛋/未冻结幼龙",
   FilterByUnnamed: "未命名幼龙/成龙",
   FilterByAvailableForBreeding: "可繁殖",
-  FilterByAvailableForBSA: "可BSA",
+  FilterByAvailableForBSA: "可执行特殊操作",
   FilterByAvailableForSummon: "可召唤",
   FilterByUngrouped: "未分组",
   SortByDefault: "默认",
