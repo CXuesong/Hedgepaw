@@ -15,7 +15,7 @@ export default defineConfig({
     }),
     banner({
       content: () => {
-        let template = fs.readFileSync("./src/banner.js", { encoding: "utf-8" });
+        let template = fs.readFileSync("./assets/banner.js", { encoding: "utf-8" });
         template = template.replaceAll("$VERSION_TS$", new Date().toISOString().split("T")[0]);
         return template;
       },
@@ -25,10 +25,12 @@ export default defineConfig({
   build: {
     outDir: "./dist",
     emptyOutDir: true,
+    // minify: false,
     rollupOptions: {
       // https://vite.dev/guide/backend-integration.html
       input: "./src/index.ts",
       output: {
+        format: "iife",
         inlineDynamicImports: true,
         entryFileNames: "dragcave-translations-tm.js",
       },
