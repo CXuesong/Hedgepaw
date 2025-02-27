@@ -1,0 +1,28 @@
+{
+  "name": "@hedgepaw/linters",
+  "version": "0.0.1",
+  "description": "linters & linter rules",
+  "repository": "https://github.com/CXuesong/Hedgepaw.git",
+  "author": "CXuesong",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "module": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "types": "./src/index.d.js"
+    }
+  },
+  "bin": {
+    "eslint": "./bin/eslint.js"
+  },
+  "dependencies": {
+    "@stylistic/eslint-plugin": "^4.1.0",
+    "@types/eslint__js": "^9.14.0",
+    "eslint": "^9.21.0",
+    "eslint-plugin-jsdoc": "^50.6.3",
+    "typescript-eslint": "^8.25.0"
+  }
+}

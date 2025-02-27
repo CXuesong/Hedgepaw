@@ -1,0 +1,23 @@
+{
+    "name": "hedgepaw-repo",
+    "version": "0.0.1",
+    "repository": "https://github.com/CXuesong/Hedgepaw.git",
+    "author": "CXuesong",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+        "build": "yarn workspaces foreach --all --verbose --topological-dev --parallel --interlaced run build",
+        "build:prod": "yarn workspaces foreach --all --verbose --topological-dev --parallel --interlaced run build:prod",
+        "lint": "yarn workspaces foreach --all --verbose --parallel run lint"
+    },
+    "workspaces": [
+        "./packages/*",
+        "./packages/@hedgepaw/*"
+    ],
+    "packageManager": "yarn@4.6.0",
+    "devDependencies": {
+        "@types/node": "^22.13.5",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.7.3"
+    }
+}

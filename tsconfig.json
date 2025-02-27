@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "noEmit": true,
+  },
+  "ts-node": {
+    // https://github.com/TypeStrong/ts-node/issues/1007#issue-598417180
+    /*
+      # If you add "esm": true to your tsconfig, you can omit the CLI flag
+      ts-node ./my-script.ts
+    */
+    "esm": true,
+  }
+}
