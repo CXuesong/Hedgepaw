@@ -14,6 +14,7 @@ export const wellKnownAnchorGroups = {
 } satisfies Record<string, PageSectionAnchorGroup>;
 
 export type WellKnownAnchorGroupKey = keyof typeof wellKnownAnchorGroups;
+export type WellKnownAnchorKey<TGroupKey extends WellKnownAnchorGroupKey> = keyof typeof wellKnownAnchorGroups[TGroupKey];
 
 export function getActiveAnchorGroupKeys(): WellKnownAnchorGroupKey[] {
   switch (location.pathname) {

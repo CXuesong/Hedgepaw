@@ -10,8 +10,10 @@ if (-not $env:npm_execpath) {
 }
 
 if ($Prod) {
-    # Remove-Item ./lib -Recurse -Force -ErrorAction SilentlyContinue
+    vite build --mode PROD
+}
+else {
+    vite build
 }
 
-vite build
 if ($LASTEXITCODE) { exit $LASTEXITCODE }

@@ -24,10 +24,10 @@ export function tryMatchAnchor(anchor: PageSectionAnchor): PageSectionAnchorMatc
   };
 }
 
-export type PageSectionAnchorGroupMatch = Record<string, PageSectionAnchorMatch | undefined>;
+export type PageSectionAnchorKeyedMatches = Record<string, PageSectionAnchorMatch | undefined>;
 
-export function matchAnchorGroup(group: PageSectionAnchorGroup): PageSectionAnchorGroupMatch {
-  const result: PageSectionAnchorGroupMatch = {};
+export function tryMatchAnchors(group: PageSectionAnchorGroup): PageSectionAnchorKeyedMatches {
+  const result: PageSectionAnchorKeyedMatches = {};
   for (const [key, anchor] of Object.entries(group)) {
     result[key] = tryMatchAnchor(anchor);
   }
