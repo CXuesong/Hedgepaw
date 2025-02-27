@@ -1,4 +1,6 @@
+import fs from "fs";
 import { defineConfig } from "vite";
+import banner from "vite-plugin-banner";
 import { checker } from "vite-plugin-checker";
 import tsconfigPaths from "vite-tsconfig-paths";
 
@@ -11,6 +13,13 @@ export default defineConfig({
         tsconfigPath: "./src/tsconfig.json",
       },
     }),
+    banner({
+      content: () => {
+        let template = fs.readFileSync("./src/banner.js", { encoding: "utf-8" });
+        template = template.replaceAll("$VERSION_TS$", new Date().toISOString().split("T")[0]);
+        return template;
+      },
+    }),
   ],
   base: "./",
   build: {
@@ -21,6 +30,7 @@ export default defineConfig({
       input: "./src/index.ts",
       output: {
         inlineDynamicImports: true,
+        entryFileNames: "dragcave-translations-tm.js",
       },
     },
   },
