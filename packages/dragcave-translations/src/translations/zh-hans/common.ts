@@ -5,4 +5,5 @@ export const resources = {
   Trading: "交易",
   Help: "帮助",
   Forum: "论坛",
+  Accept: "接受",
 } satisfies Record<string, string>;
