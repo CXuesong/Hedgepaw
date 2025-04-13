@@ -1,4 +1,4 @@
-import templateHtml from "./settings.template.html";
+import templateHtml from "./settings.template.html?raw";
 
 export function renderSettingsLink(): void {
   const navBar = document.querySelector("nav");

@@ -1,5 +1,5 @@
 import fs from "fs";
-import { defineConfig, Plugin } from "vite";
+import { defineConfig } from "vite";
 import banner from "vite-plugin-banner";
 import { checker } from "vite-plugin-checker";
 import tsconfigPaths from "vite-tsconfig-paths";
@@ -32,7 +32,7 @@ export default defineConfig(env => {
           return template;
         },
       }),
-      importHtmlSource,
+      // Not using htmlImport (custom) plugin due to https://github.com/vitejs/vite/issues/4067
     ],
     base: "./",
     build: {
@@ -51,19 +51,3 @@ export default defineConfig(env => {
     },
   };
 });
-
-const importHtmlSource: Plugin = {
-  name: "htmlImport",
-  /**
-   * Checks to ensure that a html file is being imported.
-   * If it is then it alters the code being passed as being a string being exported by default.
-   * @param code The file as a string.
-   * @param id The absolute path. 
-   */
-  transform: (code, id) => {
-    if (id.match(/\.html$/ig)) {
-      code = `export default ${JSON.stringify(code)};`;
-    }
-    return { code };
-  },
-};
