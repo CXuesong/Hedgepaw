@@ -1,0 +1,558 @@
+/*
+SNAPSHOT: https://s.dcave.net/cache/css4/a/ah282m.css
+*/
+.eggs {
+    height: 50px;
+    clear: both
+}
+
+.eggs>div {
+    text-align: center;
+    width: 33.33%;
+    float: left;
+    display: inline
+}
+
+.ap {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap
+}
+
+.ap>div {
+    width: 16.667%;
+    line-height: 1.2;
+    padding: 0 4px 4px;
+    box-sizing: border-box
+}
+
+.ap a {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.drag,.ui-sortable-helper {
+    opacity: 0.5;
+    filter: alpha(opacity=50)
+}
+
+.online {
+    font-size: 0.8em;
+    padding-top: 0.5em;
+    clear: both
+}
+
+#breedlist tr {
+    contain: layout style paint;
+    content-visibility: auto
+}
+
+.share {
+    padding: 4px;
+    width: 34px;
+    display: flex;
+    gap: 2px
+}
+
+.share a {
+    text-decoration: none
+}
+
+._11_0 {
+    text-transform: none
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+    canvas,.ap,.eggs,.spr,._11_2 {
+        image-rendering:-moz-crisp-edges;
+        image-rendering: pixelated
+    }
+}
+
+@media (min-resolution: 2dppx) {
+    canvas,.ap,.eggs,.spr,._11_2 {
+        image-rendering:-moz-crisp-edges;
+        image-rendering: pixelated
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both
+}
+
+.adsbygoogle {
+    height: 90px;
+    display: block;
+    width: 728px
+}
+
+._13_0 {
+    font-family: 'DCS';
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    text-indent: 0;
+    line-height: 1;
+    text-decoration-skip-ink: none
+}
+
+._13_1:before {
+    content: '\41'
+}
+
+._13_2:before {
+    content: '\42'
+}
+
+._13_3:before {
+    content: '\43'
+}
+
+._13_4:before {
+    content: '\44'
+}
+
+._13_5:before {
+    content: '\45'
+}
+
+._13_6:before {
+    content: '\46'
+}
+
+._13_7:before {
+    content: '\4b'
+}
+
+._13_8:before {
+    content: '\4f'
+}
+
+._13_9:before {
+    content: '\58'
+}
+
+._13_a:before {
+    content: '\66'
+}
+
+._13_b:before {
+    content: '\67'
+}
+
+._13_c:before {
+    content: '\6d'
+}
+
+._13_d:before {
+    content: '\7c'
+}
+
+._13_e:before {
+    content: '\f100'
+}
+
+._13_f:before {
+    content: '\f101'
+}
+
+._13_g:before {
+    content: '\f102'
+}
+
+._13_h:before {
+    content: '\f103'
+}
+
+._13_i:before {
+    content: '\f104'
+}
+
+._13_j:before {
+    content: '\f107'
+}
+
+._13_k:before {
+    content: '\26a0'
+}
+
+._90_0 {
+    font-family: "FQ","Times New Roman","Times",serif;
+    background: #1b4a99;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    color: #FFF;
+    text-align: left;
+    letter-spacing: 0;
+    padding: 4px;
+    font-size: 12px;
+    line-height: 14px;
+    max-width: 200px;
+    display: none;
+    margin-left: -16px;
+    z-index: 1000
+}
+
+._90_0:after {
+    left: 16px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(255,255,255,0);
+    border-width: 6px;
+    margin-left: -6px
+}
+
+._90_0 a:link,._90_0 a:visited {
+    color: #FFF
+}
+
+._90_0 a:link:hover,._90_0 a:visited:hover {
+    color: #ffcc00
+}
+
+._90_1 {
+    margin-top: -20px
+}
+
+._90_1:after {
+    top: 100%;
+    border-top-color: #1b4a99
+}
+
+._90_2 {
+    margin-top: 6px
+}
+
+._90_2:after {
+    top: calc(-2 * 6px);
+    border-bottom-color: #1b4a99
+}
+
+._90_3 {
+    margin-left: 16px
+}
+
+._90_3:after {
+    left: auto;
+    right: 16px
+}
+
+._90_4 {
+    display: inline-block;
+    text-indent: 0
+}
+
+h1,h2,h3,h4 {
+    padding: 0;
+    margin: 0
+}
+
+p {
+    margin: 8px 0;
+    text-indent: 1em;
+    text-align: left
+}
+
+th,td {
+    text-align: center;
+    vertical-align: top
+}
+
+table.vamid td,table.vamid th,table.vamid img {
+    vertical-align: middle
+}
+
+table.leftalign,table.leftalign td,table.leftalign th {
+    text-align: left
+}
+
+img {
+    border-width: 0
+}
+
+acronym,abbr {
+    cursor: help
+}
+
+legend {
+    font-weight: bold
+}
+
+:root {
+    --selected: #1b4a99;
+    --selected-text: #fff;
+    accent-color: #1b4a99
+}
+
+html,body {
+    padding: 0;
+    margin: 0
+}
+
+body {
+    background: #000 url(https://s.dcave.net/cache/images/1/1hde9kl.jpg) fixed top center no-repeat;
+    background-image: image-set(url(https://s.dcave.net/cache/images/3/3yzf8j.webp) type('image/webp') 1x, url(https://s.dcave.net/cache/images/1/1hde9kl.jpg) type('image/jpeg') 1x);
+    transition: background-position 0s linear;
+    font: 14px/19.6px "PT Serif","Times New Roman","Times",serif;
+    color: #FFF
+}
+
+a:link,a:visited {
+    color: #FFF
+}
+
+a:active,a:link:hover {
+    color: #ffcc00
+}
+
+fieldset {
+    border-color: #e9dabb
+}
+
+table.border,table.border td,table.border th {
+    border: 1px solid #C0AE80;
+    border-collapse: collapse
+}
+
+table.st tr:nth-child(2n),tr.st:nth-child(2n) {
+    background: #DAC8A3
+}
+
+table thead th {
+    font-family: "FQ","PT Serif","Times New Roman","Times",serif;
+    color: #44300b
+}
+
+h1,h3 {
+    font-family: "FQ","PT Serif","Times New Roman","Times",serif;
+    text-align: left;
+    line-height: 1
+}
+
+h2 {
+    color: #55411b;
+    font: normal 18px/24px 'PT Serif Caption','PT Serif',"Times New Roman","Times",serif;
+    text-align: left;
+    margin-bottom: 8px
+}
+
+h3 {
+    color: #44300b;
+    font-size: 14px
+}
+
+h4 {
+    color: #7b5e28;
+    font-family: "FQ","Times New Roman","Times",serif;
+    font-weight: bold
+}
+
+#code tr:nth-child(4n),#code tr:nth-child(4n+3),#code3 tr:nth-child(6n),#code3 tr:nth-child(6n+4),#code3 tr:nth-child(6n+5) {
+    background-color: #D3C19B
+}
+
+.disabled {
+    color: #746d5d
+}
+
+.selected {
+    background: var(--selected);
+    color: var(--selected-text)
+}
+
+input[type=text],input[type=password],input[type=email],input[type=search],input[type=number],input:not([type]),textarea {
+    display: inline-block;
+    background: #FFF;
+    border: 1px solid #a48b5b;
+    border-radius: 1px;
+    box-sizing: border-box;
+    padding: 0 4px;
+    font-size: 13px;
+    line-height: 21px;
+    height: 23px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    vertical-align: middle
+}
+
+input[type=text]:focus:not(:disabled),input[type=password]:focus:not(:disabled),input[type=email]:focus:not(:disabled),input[type=search]:focus:not(:disabled),input[type=number]:focus:not(:disabled),input:not([type]):focus:not(:disabled),textarea:focus:not(:disabled) {
+    border-color: #1b4a99;
+    outline: 0;
+    box-shadow: 0 0 2px rgba(47,101,187,0.5)
+}
+
+input[type=text]:disabled,input[type=password]:disabled,input[type=email]:disabled,input[type=search]:disabled,input[type=number]:disabled,input:not([type]):disabled,textarea:disabled {
+    color: #888;
+    background: #EEE
+}
+
+textarea {
+    display: block;
+    height: auto;
+    line-height: 1.3
+}
+
+._p_a {
+    position: relative;
+    margin: 5px 32px -5px -18px;
+    font-family: 'fq',"Times New Roman","Times",serif;
+    color: #FFF
+}
+
+._p_1 {
+    width: 389px;
+    height: 120px
+}
+
+._p_9 {
+    text-align: right;
+    position: absolute;
+    right: 0;
+    bottom: 8px
+}
+
+._p_3 {
+    opacity: 0.9;
+    font-size: 13px;
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+._p_4 {
+    text-decoration: none
+}
+
+._p_a a {
+    color: #fff
+}
+
+._p_a a:hover {
+    color: #ffcc00
+}
+
+._p_9 a {
+    font-size: 15px;
+    text-decoration: none
+}
+
+._p_9 a:after {
+    color: #fff;
+    content: "\00B7";
+    margin: 0 4px
+}
+
+._p_9 a:last-child:after {
+    content: ''
+}
+
+@media (max-width: 825px) {
+    ._p_a {
+        margin:5px calc(-0.5 * var(--responsive-margin) + 32px) -5px calc(-0.5 * var(--responsive-margin) - 18px)
+    }
+}
+
+._n_7 {
+    width: 825px;
+    max-width: 825px;
+    margin: auto;
+    position: relative
+}
+
+._n_1 {
+    background: url(https://s.dcave.net/cache/images/1/1wwx42h.png) no-repeat;
+    background-image: -webkit-image-set(url(https://s.dcave.net/cache/images/1/1wwx42h.png) 1x, url(https://s.dcave.net/cache/images/1/1iou9dx.png) 2x);
+    background-image: image-set(url(https://s.dcave.net/cache/images/1/1wwx42h.png) 1x, url(https://s.dcave.net/cache/images/1/1iou9dx.png) 2x);
+    width: 825px;
+    color: #000;
+    height: 30px
+}
+
+._n_3 {
+    background: url(https://s.dcave.net/cache/images/2/240jw0.png) repeat-y;
+    background-image: -webkit-image-set(url(https://s.dcave.net/cache/images/1/1kr4pgp.webp) 1x, url(https://s.dcave.net/cache/images/r/r4gdjm.webp) 2x);
+    background-image: image-set(url(https://s.dcave.net/cache/images/1/1kr4pgp.webp) type('image/webp') 1x, url(https://s.dcave.net/cache/images/2/240jw0.png) type('image/png') 1x, url(https://s.dcave.net/cache/images/r/r4gdjm.webp) type('image/webp') 2x, url(https://s.dcave.net/cache/images/1/1mfdkm8.png) type('image/png') 2x);
+    padding-left: 52px;
+    padding-right: 44px;
+    color: #000;
+    width: 729px
+}
+
+._n_3 a:link,._n_3 a:visited {
+    color: #44300b
+}
+
+._n_3 a:active,._n_3 a:link:hover {
+    color: #7b5e28
+}
+
+#middle {
+    background: url(https://s.dcave.net/cache/images/m/mvsaou.jpg) repeat-y;
+    background-image: -webkit-image-set(url(https://s.dcave.net/cache/images/1/1pv2qx7.webp) 1x, url(https://s.dcave.net/cache/images/1/1pv2qx7.webp) 2x);
+    background-image: image-set(url(https://s.dcave.net/cache/images/1/1pv2qx7.webp) type('image/webp') 1x, url(https://s.dcave.net/cache/images/m/mvsaou.jpg) type('image/jpeg') 1x, url(https://s.dcave.net/cache/images/1/1pv2qx7.webp) type('image/webp') 2x, url(https://s.dcave.net/cache/images/1/1chwm49.jpg) type('image/jpeg') 2x);
+    padding-left: 8px;
+    padding-right: 16px;
+    padding-top: 16px
+}
+
+#middle h1 {
+    margin-bottom: 8px
+}
+
+#middle h3 {
+    margin-bottom: 4px
+}
+
+body.no-webp ._n_3 {
+    background-image: -webkit-image-set(url(https://s.dcave.net/cache/images/2/240jw0.png) 1x, url(https://s.dcave.net/cache/images/1/1mfdkm8.png) 2x)
+}
+
+body.no-webp #middle {
+    background-image: -webkit-image-set(url(https://s.dcave.net/cache/images/m/mvsaou.jpg) 1x, url(https://s.dcave.net/cache/images/1/1chwm49.jpg) 2x)
+}
+
+._n_4 {
+    background: url(https://s.dcave.net/cache/images/6/6dhfny.png) no-repeat;
+    background-image: -webkit-image-set(url(https://s.dcave.net/cache/images/6/6dhfny.png) 1x, url(https://s.dcave.net/cache/images/1/1viwa55.png) 2x);
+    background-image: image-set(url(https://s.dcave.net/cache/images/6/6dhfny.png) 1x, url(https://s.dcave.net/cache/images/1/1viwa55.png) 2x);
+    color: #000;
+    width: 825px;
+    height: 37px
+}
+
+._n_5 {
+    margin-left: -11.5px;
+    margin-top: 1.5em;
+    height: 90px;
+    display: block;
+    overflow: hidden;
+    width: 728px;
+    clear: both
+}
+
+._n_6 {
+    font-size: 0.8em;
+    text-align: center;
+    margin: 0 auto
+}
+
+@media (max-width: 825px) {
+    ._n_7 {
+        --responsive-margin:max(-52px, calc((100vw - 825px) / 2));
+        margin: 0 var(--responsive-margin)
+    }
+}
