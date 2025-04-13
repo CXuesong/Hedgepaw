@@ -1,7 +1,9 @@
 import { getActiveAnchorGroupKeys, tryMatchAnchors, wellKnownAnchorGroups } from "./anchors";
+import { renderSettingsLink } from "./surfaces/settings";
 import { localizeAnchoredNodes } from "./translations/localization";
 import { anchorGroupResources } from "./translations/zh-hans";
 
+renderSettingsLink();
 const activeAnchorGroups = getActiveAnchorGroupKeys();
 console.log("Groups to localize:");
 

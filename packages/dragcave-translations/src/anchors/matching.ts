@@ -18,17 +18,20 @@ export function tryMatchAnchor(anchor: PageSectionAnchor): PageSectionAnchorMatc
     }
     return undefined;
   }
+  // For now, we are not allowing ambiguous match.
   if (matches.length > 0) return undefined;
   return {
     node: matches[0] as HTMLElement,
   };
 }
 
-export type PageSectionAnchorKeyedMatches = Record<string, PageSectionAnchorMatch | undefined>;
+export type PageSectionAnchorKeyedMatches<TKey extends string = string> = Record<TKey, PageSectionAnchorMatch | undefined>;
 
+export function tryMatchAnchors(group: PageSectionAnchorGroup): PageSectionAnchorKeyedMatches;
+export function tryMatchAnchors<TKey extends string>(group: PageSectionAnchorGroup<TKey>): PageSectionAnchorKeyedMatches<TKey>;
 export function tryMatchAnchors(group: PageSectionAnchorGroup): PageSectionAnchorKeyedMatches {
   const result: PageSectionAnchorKeyedMatches = {};
-  for (const [key, anchor] of Object.entries(group)) {
+  for (const [key, anchor] of Object.entries<PageSectionAnchor>(group)) {
     result[key] = tryMatchAnchor(anchor);
   }
   return result;

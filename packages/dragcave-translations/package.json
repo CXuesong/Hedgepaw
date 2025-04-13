@@ -12,6 +12,7 @@
     "node": ">=18"
   },
   "scripts": {
+    "dev": "vite dev",
     "build": "pwsh -File ./scripts/build.ps1",
     "build:prod": "pwsh -File ./scripts/build.ps1 -Prod",
     "lint": "eslint src"

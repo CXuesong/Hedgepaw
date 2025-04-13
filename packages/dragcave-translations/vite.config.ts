@@ -1,5 +1,5 @@
 import fs from "fs";
-import { defineConfig } from "vite";
+import { defineConfig, Plugin } from "vite";
 import banner from "vite-plugin-banner";
 import { checker } from "vite-plugin-checker";
 import tsconfigPaths from "vite-tsconfig-paths";
@@ -32,6 +32,7 @@ export default defineConfig(env => {
           return template;
         },
       }),
+      importHtmlSource,
     ],
     base: "./",
     build: {
@@ -40,7 +41,7 @@ export default defineConfig(env => {
       // minify: false,
       rollupOptions: {
         // https://vite.dev/guide/backend-integration.html
-        input: "./src/index.ts",
+        input: "./src/main.ts",
         output: {
           format: "iife",
           inlineDynamicImports: true,
@@ -50,3 +51,19 @@ export default defineConfig(env => {
     },
   };
 });
+
+const importHtmlSource: Plugin = {
+  name: "htmlImport",
+  /**
+   * Checks to ensure that a html file is being imported.
+   * If it is then it alters the code being passed as being a string being exported by default.
+   * @param code The file as a string.
+   * @param id The absolute path. 
+   */
+  transform: (code, id) => {
+    if (id.match(/\.html$/ig)) {
+      code = `export default ${JSON.stringify(code)};`;
+    }
+    return { code };
+  },
+};

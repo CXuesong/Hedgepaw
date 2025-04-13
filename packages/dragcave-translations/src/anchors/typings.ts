@@ -3,4 +3,4 @@ export interface PageSectionAnchor {
   innerText?: string;
 }
 
-export type PageSectionAnchorGroup = Record<string, PageSectionAnchor>;
+export type PageSectionAnchorGroup<TKey extends string = string> = Record<TKey, PageSectionAnchor>;
