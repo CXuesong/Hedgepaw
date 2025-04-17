@@ -3,6 +3,7 @@ import { defineConfig } from "vite";
 import banner from "vite-plugin-banner";
 import { checker } from "vite-plugin-checker";
 import tsconfigPaths from "vite-tsconfig-paths";
+import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig(env => {
@@ -20,6 +21,7 @@ export default defineConfig(env => {
   return {
     plugins: [
       tsconfigPaths({ loose: true }),
+      react(),
       checker({
         typescript: {
           tsconfigPath: "./src/tsconfig.json",
