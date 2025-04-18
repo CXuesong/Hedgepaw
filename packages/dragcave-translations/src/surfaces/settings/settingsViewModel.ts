@@ -1,4 +1,4 @@
-import { ObservableViewModelBase } from "../observableViewModel";
+import { ObservableViewModelBase } from "src/utils/observableViewModel";
 
 export class SettingsViewModel extends ObservableViewModelBase {
   private _isOpened = false;

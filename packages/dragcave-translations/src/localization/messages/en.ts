@@ -1,6 +1,7 @@
 /*eslint sort-keys: "error"*/
 export const localizableMessages = {
   AppName: "Dragon Cave translations",
+  AutoDetect: "Auto detect",
   Cancel: "Cancel",
   Language: "Language",
   OK: "OK",

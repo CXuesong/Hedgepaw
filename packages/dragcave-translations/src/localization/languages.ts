@@ -29,6 +29,17 @@ export type KnownLanguage = keyof typeof knownLanguagesInfo;
 
 // export type KnownLanguageWithFallback = keyof typeof knownLanguagesInfo | "en" | "zh";
 
+const knownLanguageFallbacks: Record<string, KnownLanguage> = {
+  "zh-cn": "zh-hans",
+  "zh-tw": "zh-hant",
+  "zh-sg": "zh-hans",
+  "zh-hk": "zh-hant",
+  "zh-mo": "zh-hant",
+  "zh-my": "zh-hans",
+  "zh": "zh-hans",
+  "en": "en-us",
+};
+
 export const knownLanguages: readonly KnownLanguage[] = Object
   .keys(knownLanguagesInfo)
   .filter((k): k is KnownLanguage => Object.prototype.hasOwnProperty.call(knownLanguagesInfo, k))
@@ -42,7 +53,7 @@ export function fallbackLanguageTag(language: string): string {
   return language.substring(0, lastSeparatorPos);
 }
 
-export function evaluateLanguageSimilarity(baseline: string, target: string): number {
+function evaluateLanguageSimilarity(baseline: string, target: string): number {
   baseline = baseline.toLowerCase();
   target = target.toLowerCase();
   if (baseline === target) return 1;
@@ -54,22 +65,21 @@ export function evaluateLanguageSimilarity(baseline: string, target: string): nu
   for (; baselineParts[commonParts] && targetParts[commonParts]; commonParts++) {
     if (baselineParts[commonParts] !== targetParts[commonParts]) break;
   }
-  return Math.min(1, commonParts / baselineParts.length);
+  
+  const similarity = Math.min(1, commonParts / baselineParts.length);
+  if (target in knownLanguageFallbacks)
+    return Math.max(similarity, evaluateLanguageSimilarity(baseline, knownLanguageFallbacks[target]));
+  return similarity;
 }
 
 export function choosePerferredLanguage<TBaseline extends string>(baselines: Iterable<TBaseline>, preferences: string | readonly string[]): TBaseline | undefined {
   if (!preferences || preferences.length === 0) return undefined;
   if (typeof preferences === "string") preferences = [preferences];
-  let priority = preferences.length;
-  const languageCandidates = new Map<TBaseline, number>();
-  for (const lang of preferences) {
-    for (const knownLang of baselines) {
-      const similarity = evaluateLanguageSimilarity(knownLang, lang);
-      languageCandidates.set(knownLang, Math.max(languageCandidates.get(knownLang) ?? 0, similarity * priority));
-    }
-    priority--;
-  }
-  return Array.from(languageCandidates).sort(([, p1], [, p2]) => p2 - p1)[0][0];
+  return Linq.asLinq(baselines)
+    .$(Linq.maxBy(baselineLang => Linq.asLinq(preferences)
+      .$(Linq.select((lang, i) => [lang, evaluateLanguageSimilarity(baselineLang, lang) * Math.pow(0.5, i)] as const))
+      .$(Linq.maxBy(t => t[1]))[1],
+    ));
 }
 
 function detectBrowserLanguage(): KnownLanguage {

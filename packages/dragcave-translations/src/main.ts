@@ -1,9 +1,12 @@
 import { getActiveAnchorGroupKeys, tryMatchAnchors, wellKnownAnchorGroups } from "./anchors";
+import { RM } from "./localization";
+import { appSettings } from "./settings";
 import { renderSettingsLink } from "./surfaces";
 import { initializeReactHosting } from "./surfaces/reactHosting";
 import { localizeAnchoredNodes } from "./translations/localization";
 import { anchorGroupResources } from "./translations/zh-hans";
 
+RM.language = appSettings.language || RM.language;
 initializeReactHosting();
 renderSettingsLink();
 const activeAnchorGroups = getActiveAnchorGroupKeys();
