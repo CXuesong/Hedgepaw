@@ -1,12 +1,12 @@
+import react from "@vitejs/plugin-react";
 import fs from "fs";
-import { defineConfig } from "vite";
+import { defineConfig, PluginOption, UserConfig } from "vite";
 import banner from "vite-plugin-banner";
 import { checker } from "vite-plugin-checker";
 import tsconfigPaths from "vite-tsconfig-paths";
-import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
-export default defineConfig(env => {
+export default defineConfig((env): UserConfig => {
   const isProduction = env.mode?.toLowerCase() === "prod";
   const scriptVersion = (() => {
     const now = new Date();
@@ -33,7 +33,7 @@ export default defineConfig(env => {
           template = template.replaceAll("$VERSION_TS$", scriptVersion);
           return template;
         },
-      }),
+      }) as PluginOption,
       // Not using htmlImport (custom) plugin due to https://github.com/vitejs/vite/issues/4067
     ],
     base: "./",

@@ -19,19 +19,20 @@
   },
   "devDependencies": {
     "@hedgepaw/linters": "workspace:^",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
     "@types/tampermonkey": "^5.0.4",
-    "@vitejs/plugin-react": "^4.3.4",
-    "typescript": "^5.7.3",
-    "vite": "^6.2.0",
+    "@vitejs/plugin-react": "^4.4.1",
+    "typescript": "^5.8.3",
+    "vite": "npm:rolldown-vite@latest",
+    "vite-bundle-analyzer": "^0.19.0",
     "vite-plugin-banner": "^0.8.0",
-    "vite-plugin-checker": "^0.9.0",
+    "vite-plugin-checker": "^0.9.1",
     "vite-tsconfig-paths": "^5.1.4"
   },
   "dependencies": {
-    "@fluentui/react-utilities": "^9.18.23",
-    "jscorlib": "^0.0.0-int.4",
+    "@fluentui/react-utilities": "^9.19.0",
+    "jscorlib": "^0.0.0-int.5",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   }

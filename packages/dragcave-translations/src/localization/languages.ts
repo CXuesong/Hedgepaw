@@ -1,5 +1,4 @@
-import * as Jscorlib from "jscorlib";
-import Linq = Jscorlib.Linq;
+import { Linq } from "jscorlib";
 
 export interface ILanguageInfo {
   autonym: string;
