@@ -4,4 +4,5 @@ import tseslint from "typescript-eslint";
 
 export default tseslint.config(
   ...MyLinters.ESLintRules.baseConfig,
+  ...MyLinters.ESLintRules.svelteConfig("./svelte.config.js"),
 );

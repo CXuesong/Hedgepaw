@@ -13,12 +13,12 @@
 
   const saveSettings = () => {
     appSettings.language = language || undefined;
-  }
+  };
 
   const closeDialog = () => {
     dialogEl.close();
     props.onclose?.();
-  }
+  };
 
   let dialogEl: HTMLDialogElement;
   $effect(() => {
@@ -36,7 +36,7 @@
         <option value=""
           >{RM.getMessage("AutoDetect")}: {autoLanguageAutonym}</option
         >
-        {#each knownLanguages as lang}
+        {#each knownLanguages as lang (lang)}
           <option value={lang}>{languageInfo[lang].autonym}</option>
         {/each}
       </select>
