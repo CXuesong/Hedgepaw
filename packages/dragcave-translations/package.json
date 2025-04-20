@@ -19,10 +19,11 @@
   },
   "devDependencies": {
     "@hedgepaw/linters": "workspace:^",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19.1.2",
+    "@sveltejs/vite-plugin-svelte": "^5.0.3",
+    "@tsconfig/svelte": "^5.0.4",
     "@types/tampermonkey": "^5.0.4",
-    "@vitejs/plugin-react": "^4.4.1",
+    "svelte": "^5.28.1",
+    "svelte-check": "^4.1.6",
     "typescript": "^5.8.3",
     "vite": "npm:rolldown-vite@latest",
     "vite-bundle-analyzer": "^0.19.0",
@@ -31,9 +32,7 @@
     "vite-tsconfig-paths": "^5.1.4"
   },
   "dependencies": {
-    "@fluentui/react-utilities": "^9.19.0",
     "jscorlib": "^0.0.0-int.5",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "tslib": "^2.8.1"
   }
 }

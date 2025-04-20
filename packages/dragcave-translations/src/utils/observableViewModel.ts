@@ -1,6 +1,5 @@
 import { Events } from "jscorlib";
 import { eventEmitterToEventSubscriber } from "../utils/eventEmitter";
-import * as React from "react";
 
 export interface ObservableViewModel {
   onPropertyChanged: (handler: Events.EventHandler<PropertyChangedEventArgs>) => Disposable;
@@ -20,6 +19,7 @@ export interface PropertyChangedEventArgs {
   readonly propertyName?: string | number | symbol;
 }
 
+/*
 export function useObservableViewModelSelector<T extends ObservableViewModel, TResult>(
   viewModel: T,
   selector: (viewModel: T) => TResult,
@@ -33,3 +33,4 @@ export function useObservableViewModelSelector<T extends ObservableViewModel, TR
   }, [viewModel]);
   return result;
 }
+*/

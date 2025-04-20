@@ -1,13 +1,13 @@
 {
   // Base config; also for VSCode
   // https://github.com/Microsoft/vscode/issues/12463
+  // "extends": "@tsconfig/svelte/tsconfig.json",
   "compilerOptions": {
     "target": "ES2022",
     "module": "ESNext",
     "moduleResolution": "node",
     "isolatedModules": true,
     "allowJs": false,
-    "jsx": "react-jsx",
     "skipLibCheck": true,
     "esModuleInterop": false,
     "strict": true,
@@ -28,6 +28,6 @@
   },
   "include": [
     "**/*.ts",
-    "**/*.tsx",
+    "**/*.svelte",
   ],
 }
