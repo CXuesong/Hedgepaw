@@ -1,5 +1,8 @@
-import SettingsDialog from "./SettingsDialog.svelte";
+import { resourceManager } from "src/localization";
+import { browserLanguage } from "src/localization/languages";
+import { appSettings } from "src/settings";
 import { mount, unmount } from "svelte";
+import SettingsDialog from "./SettingsDialog.svelte";
 
 let settingsDialog: Record<never, never> | undefined;
 
@@ -16,9 +19,13 @@ export function renderSettingsLink(): void {
       // Existing children of target are left where they are.
       target: document.body,
       props: {
-        onclose: () => {
+        onclose: (accepted: boolean) => {
           settingsDialog = undefined;
           void unmount(sd);
+          // Apply settings
+          if (accepted) {
+            resourceManager.language = appSettings.language || browserLanguage;
+          }
         },
       },
     });
