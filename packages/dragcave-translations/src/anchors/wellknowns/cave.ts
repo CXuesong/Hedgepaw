@@ -14,10 +14,22 @@ export const caveAnchors = {
   TheCaveP2: {
     selector: "main section:nth-of-type(1) > p:nth-of-type(2)",
     innerText: "You also see a pile of scrolls on the ground. Having been here before, you have started recording information about the growth and progress of your eggs.",
+    children: {
+      RecordingInformation: {
+        selector: "a[href]:nth-of-type(1)",
+        innerText: "recording information",
+      },
+    },
   },
   TheCaveP3: {
     selector: "main section:nth-of-type(1) > p:nth-of-type(3)",
     innerText: "Near the entrance to the cave, there are some abandoned eggs. If you don’t want the dragons inside to die, you can take one of those instead.",
+    children: {
+      TakeOneOfThose: {
+        selector: "a[href]:nth-of-type(1)",
+        innerText: "take one of those",
+      },
+    },
   },
   TheCaveP4: {
     selector: "main section:nth-of-type(1) > p:nth-of-type(4)",

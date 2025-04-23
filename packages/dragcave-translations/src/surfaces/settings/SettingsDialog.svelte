@@ -12,13 +12,14 @@
   const autoLanguageAutonym = languageInfo[browserLanguage].autonym;
   const props: SettingsDialogProps = $props();
 
-  const closeDialog = (accepted: boolean) => {
-    if (accepted) {
+  const onDialogClose = () => {
+    if (dialogEl.returnValue === "ok") {
       appSettings.language = language || undefined;
       appSettings.translationEnabled = translationEnabled;
+      props.onclose?.(true);
+    } else {
+      props.onclose?.(false);
     }
-    dialogEl.close();
-    props.onclose?.(accepted);
   };
 
   let dialogEl: HTMLDialogElement;
@@ -27,10 +28,10 @@
   });
 </script>
 
-<dialog bind:this={dialogEl}>
+<dialog bind:this={dialogEl} onclose={onDialogClose}>
   <h2>{RM.getMessage("AppName")}</h2>
   <h3>{RM.getMessage("Settings")}</h3>
-  <form>
+  <form method="dialog">
     <div>
       <div>
         <label for="settings-language">{RM.getMessage("Language")}: </label>
@@ -51,11 +52,8 @@
       <div>{RM.getMessage("SomeSettingsNeedsRefreshToTakeEffect")}</div>
     </div>
     <menu>
-      <button type="submit" onclick={(e) => {
-        e.preventDefault();
-        closeDialog(true);
-      }}>{RM.getMessage("OK")}</button>
-      <button onclick={() => closeDialog(false)}>{RM.getMessage("Cancel")}</button>
+      <button type="submit" value="ok">{RM.getMessage("OK")}</button>
+      <button value="cancel">{RM.getMessage("Cancel")}</button>
     </menu>
   </form>
 </dialog>
