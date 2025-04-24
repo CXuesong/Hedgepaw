@@ -2,7 +2,7 @@
 // @name         Dragcave translation
 // @namespace    https://cxuesong.com/
 // @copyright    Copyright (c) 2025 CXuesong
-// @version      $VERSION_TS$
+// @version      __APP_BUILD_INFO__.scriptVersion
 // @description  A work-in-progress translation script for Dragon Cave. Currently only zh-Hans is supported.
 // @author       CXuesong
 // @match        https://dragcave.net/*

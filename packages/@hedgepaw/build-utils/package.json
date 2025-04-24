@@ -1,0 +1,32 @@
+{
+  "name": "@hedgepaw/build-utils",
+  "version": "0.0.1",
+  "description": "building utils",
+  "repository": "https://github.com/CXuesong/Hedgepaw.git",
+  "author": "CXuesong",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "types": "./lib/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "pwsh -File ./scripts/build.ps1",
+    "build:prod": "pwsh -File ./scripts/build.ps1 -Clean",
+    "lint": "eslint src"
+  },
+  "bin": {
+    "tsx": "./bin/tsx.js"
+  },
+  "devDependencies": {
+    "@hedgepaw/linters": "workspace:^",
+    "@types/node": "^20.4.0",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "tsx": "^4.19.3"
+  }
+}
