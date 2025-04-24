@@ -5,7 +5,7 @@ export default {
   trailingComma: "es5",
   tabWidth: 2,
   useTabs: false,
-  printWidth: 240,
+  printWidth: 180,
   // svelteSortOrder: 'scripts-markup-styles',
   bracketSameLine: true,
 };

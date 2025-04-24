@@ -10,4 +10,5 @@ export const localizableMessages: Partial<LocalizableMessages> = {
   OK: "确定",
   Settings: "设置",
   SomeSettingsNeedsRefreshToTakeEffect: "某些设置需要刷新页面才能生效。",
+  Version: "版本",
 };

@@ -19,6 +19,7 @@ interface AppBuildInfo {
   isProduction: boolean;
   scriptVersion: string;
   commitId: string;
+  commitTimestamp: string;
   buildTimestamp: string;
 }
 

@@ -14,9 +14,7 @@ function invokeGit(args: readonly string[]): Promise<string> {
   return resolvers.promise;
 }
 
-/**
- * Gets the current git HEAD value.
- */
+/** Gets the current git HEAD value. */
 export function getGitHead(): Promise<string> {
   return invokeGit(["rev-parse", "HEAD"]);
 }
@@ -24,4 +22,8 @@ export function getGitHead(): Promise<string> {
 export async function getGitVersionSpec(): Promise<string> {
   const tagSpec = await invokeGit(["describe", "--tags", "--match", "v-*"]);
   return tagSpec;
+}
+
+export function getGitCommitDate(revision: string): Promise<string> {
+  return invokeGit(["show", "-s", "--format=%ci", revision]);
 }

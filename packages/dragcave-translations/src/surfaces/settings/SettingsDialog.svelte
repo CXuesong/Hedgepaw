@@ -30,6 +30,15 @@
 
 <dialog bind:this={dialogEl} onclose={onDialogClose}>
   <h2>{RM.getMessage("AppName")}</h2>
+  <hr />
+  <h3>{RM.getMessage("Version")}</h3>
+  <div>
+    <div>Version: {__APP_BUILD_INFO__.scriptVersion}</div>
+    <div>Commit ID: <a href="https://github.com/CXuesong/Hedgepaw/commits/{__APP_BUILD_INFO__.commitId}/" target="_blank">{__APP_BUILD_INFO__.commitId.substring(0, 8)}</a></div>
+    <div>Commit time: {__APP_BUILD_INFO__.commitTimestamp}</div>
+    <div>Build time: {__APP_BUILD_INFO__.buildTimestamp}</div>
+  </div>
+  <hr />
   <h3>{RM.getMessage("Settings")}</h3>
   <form method="dialog">
     <div>
@@ -51,6 +60,7 @@
       </div>
       <div>{RM.getMessage("SomeSettingsNeedsRefreshToTakeEffect")}</div>
     </div>
+    <hr />
     <menu>
       <button type="submit" value="ok">{RM.getMessage("OK")}</button>
       <button value="cancel">{RM.getMessage("Cancel")}</button>

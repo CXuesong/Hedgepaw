@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/triple-slash-reference
 /// <reference path="./src/types.d.ts" />
-import { asDefineReplacements, getGitHead } from "@hedgepaw/build-utils";
+import { asDefineReplacements, getGitCommitDate, getGitHead } from "@hedgepaw/build-utils";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 import fs from "fs";
 import { defineConfig, PluginOption, UserConfig } from "vite";
@@ -34,7 +34,7 @@ export default defineConfig(async (env): Promise<UserConfig> => {
       // Not using htmlImport (custom) plugin due to https://github.com/vitejs/vite/issues/4067
     ],
     define: {
-      ...asDefineReplacements(buildInfo),
+      ...asDefineReplacements({ "__APP_BUILD_INFO__": buildInfo }),
     },
     base: "./",
     build: {
@@ -62,9 +62,11 @@ async function makeAppBuildInfo(isProduction: boolean): Promise<AppBuildInfo> {
     return `${v}.dev.${Date.now()}`;
   })();
   const commitId = await getGitHead();
+  const commitTimestamp = await getGitCommitDate(commitId);
   return {
     isProduction,
     scriptVersion,
+    commitTimestamp,
     buildTimestamp: new Date().toISOString(),
     commitId,
   };
