@@ -19,6 +19,7 @@ export function getGitHead(): Promise<string> {
   return invokeGit(["rev-parse", "HEAD"]);
 }
 
+/** Gets the description of current commit such as `v-0.0.1-5-g0ba4baa`. */
 export async function getGitVersionSpec(): Promise<string> {
   const tagSpec = await invokeGit(["describe", "--tags", "--match", "v-*"]);
   return tagSpec;

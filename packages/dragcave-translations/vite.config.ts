@@ -28,6 +28,8 @@ export default defineConfig(async (env): Promise<UserConfig> => {
         content: () => {
           let template = fs.readFileSync("./assets/banner.js", { encoding: "utf-8" });
           template = template.replaceAll("__APP_BUILD_INFO__.scriptVersion", buildInfo.scriptVersion);
+          template = template.replaceAll("__APP_BUILD_INFO__.commitId", buildInfo.commitId);
+          template = template.replaceAll("__APP_BUILD_INFO__.buildTimestamp", buildInfo.buildTimestamp);
           return template;
         },
       }) as PluginOption,
@@ -56,7 +58,15 @@ export default defineConfig(async (env): Promise<UserConfig> => {
 
 async function makeAppBuildInfo(isProduction: boolean): Promise<AppBuildInfo> {
   const scriptVersion = await (async () => {
-    const version = await getGitVersionSpec();
+    const versionSpec = await getGitVersionSpec();
+    const versionSegments = /^v-(?<V>[^-]+)(-(?<R>\d+)-(?<C>g[0-9a-f]+))?$/.exec(versionSpec);
+    // https://www.tampermonkey.net/documentation.php?locale=en#meta:version
+    const version = (() => {
+      if (!versionSegments?.groups) throw new Error(`Unexpected versionspec: ${versionSpec}`);
+      const { V, R, C } = versionSegments.groups;
+      // tagged version + commits
+      return R ? `${V}+${R}-${C}` : `${V}+0`;
+    })();
     if (isProduction) return version;
     return `${version}.dev.${Date.now()}`;
   })();
