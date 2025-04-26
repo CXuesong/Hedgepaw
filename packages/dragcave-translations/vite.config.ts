@@ -49,7 +49,8 @@ export default defineConfig(async (env): Promise<UserConfig> => {
         output: {
           format: "iife",
           inlineDynamicImports: true,
-          entryFileNames: "dragcave-translations-tm.js",
+          // https://stackoverflow.com/questions/40269529/how-do-i-add-a-userscript-installation-button-to-my-web-page
+          entryFileNames: "dragcave-translations-tm.user.js",
         },
       },
     },
