@@ -27,15 +27,17 @@ export function localizeAnchoredNodes(
 
             if (child) {
               const { node } = child;
-              if (node instanceof HTMLElement) {
+              if (segment.text != null && node instanceof HTMLElement) {
                 node.innerText = segment.text;
               }
               fragment.appendChild(node);
             } else {
-              console.warn(`Localization: child ${segment.key} not found in match ${key}`);
+              const message = `DCT: child ${segment.key} not found in match ${key}`;
               const placeholder = document.createElement("span");
               placeholder.className = "dct-localization-missing-child";
               placeholder.innerText = `[${segment.key}|${segment.text}]`;
+              placeholder.title = message;
+              console.warn(message, placeholder);
               fragment.appendChild(placeholder);
             }
 
@@ -57,7 +59,7 @@ interface LocalizationTextSegment {
 interface LocalizationChildSegment {
   type: "child";
   key: string;
-  text: string;
+  text?: string;
 }
 
 type LocalizationSegment =
@@ -85,19 +87,21 @@ function parseLocalizationExpression(expr: string, key: string): LocalizationSeg
   function parseChildPlaceholder(): LocalizationChildSegment | undefined {
     parser.pushState();
     if (!parser.consumeString("{C|")) return parser.popState(), undefined;
-    const keyMatch = parser.consumeRegExp(/[^|}]+/y);
-    if (!keyMatch) return parser.popState(), undefined;
-    parser.consumeString("|");
-    const textMatch = parser.consumeRegExp(/[^|}]+/y);
-    if (!textMatch) return parser.popState(), undefined;
+
+    const childKey = parser.consumeRegExp(/[^|}]+/y)?.[0];
+    if (childKey == null) return parser.popState(), undefined;
+
+    let childText: string | undefined;
+    if (parser.consumeString("|")) {
+      childText = parser.consumeRegExp(/[^|}]*/y)?.[0];
+    }
     // TODO extensibility
     if (!parser.consumeString("}")) return parser.popState(), undefined;
-
     parser.acceptState();
     return {
       type: "child",
-      key: keyMatch[0],
-      text: textMatch[0],
+      key: childKey,
+      text: childText,
     };
   }
 

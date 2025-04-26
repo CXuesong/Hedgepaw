@@ -24,7 +24,7 @@ export function tryMatchAnchor(anchor: PageSectionAnchor, options?: PageSectionA
       return undefined;
     }
     // For now, we are not allowing ambiguous match.
-    if (matches.length > 0) return undefined;
+    if (matches.length > 1) return undefined;
     return matches[0] as HTMLElement;
   })();
   if (!node) return undefined;
@@ -32,10 +32,8 @@ export function tryMatchAnchor(anchor: PageSectionAnchor, options?: PageSectionA
     // match children
     const children: Record<string, PageSectionAnchorMatch | undefined> = {};
     for (const [key, child] of Object.entries(anchor.children)) {
-      const match = tryMatchAnchor(child, options);
-      if (match) {
-        children[key] = match;
-      }
+      const match = tryMatchAnchor(child, { ...options, container: node });
+      children[key] = match;
     }
     return children;
   })();

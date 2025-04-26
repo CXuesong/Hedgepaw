@@ -4,12 +4,14 @@ import * as Dragons from "./dragons";
 import * as Header from "./header";
 import * as Teleport from "./teleport";
 import * as Account from "./account";
+import * as Trading from "./trading";
 
 export type { CaveAnchorKey } from "./cave";
 export type { DragonsAnchorKey } from "./dragons";
 export type { HeaderAnchorKey } from "./header";
 export type { TeleportAnchorKey } from "./teleport";
 export type { AccountAnchorKey } from "./account";
+export type { TradingAnchorKey } from "./trading";
 
 export const wellKnownAnchorGroups = {
   Cave: Cave.caveAnchors,
@@ -17,6 +19,7 @@ export const wellKnownAnchorGroups = {
   Dragons: Dragons.dragonsAnchors,
   Teleport: Teleport.teleportAnchors,
   Account: Account.accountAnchors,
+  Trading: Trading.tradingAnchors,
 } satisfies Record<string, PageSectionAnchorGroup>;
 
 export type WellKnownAnchorGroupKey = keyof typeof wellKnownAnchorGroups;
@@ -27,6 +30,7 @@ export function getActiveAnchorGroupKeys(): WellKnownAnchorGroupKey[] {
     case "/": return ["Header", "Cave"];
   }
   if (location.pathname.match(/^\/dragons(\/|$)/g)) return ["Header", "Dragons"];
+  if (location.pathname.match(/^\/trading(\/|$)/g)) return ["Header", "Trading"];
   if (location.pathname.match(/^\/teleport(\/|$)/g)) return ["Header", "Teleport"];
   if (location.pathname.match(/^\/account(\/|$)/g)) return ["Header", "Account"];
   return ["Header"];
