@@ -42,6 +42,9 @@
   <form method="dialog">
     <div>
       <div>
+        {RM.getMessage("Language")}: {languageInfo["zh-hans"].autonym}
+      </div>
+      <div style:display="none">
         <label for="settings-language">{RM.getMessage("Language")}: </label>
         <select id="settings-language" name="language" bind:value={language}>
           <option value="">
