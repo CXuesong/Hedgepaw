@@ -66,3 +66,11 @@
     </menu>
   </form>
 </dialog>
+
+<style lang="scss">
+  dialog {
+    a {
+      color: initial;
+    }
+  }
+</style>

@@ -23,6 +23,7 @@
     "@sveltejs/vite-plugin-svelte": "^5.0.3",
     "@tsconfig/svelte": "^5.0.4",
     "@types/tampermonkey": "^5.0.4",
+    "sass": "^1.87.0",
     "svelte": "^5.28.2",
     "svelte-check": "^4.1.6",
     "typescript": "^5.8.3",
