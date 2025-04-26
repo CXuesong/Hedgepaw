@@ -8,5 +8,6 @@
 // @match        https://dragcave.net/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=dragcave.net
 // @homepage     https://github.com/CXuesong/Hedgepaw/tree/main/packages/dragcave-translations
+// @updateURL    https://cxuesong.github.io/Hedgepaw/dragcave-translations/dist/dragcave-translations-tm.js
 // @grant        none
 // ==/UserScript==
